@@ -1,0 +1,14 @@
+{
+    "friendlyName": "Samsung A32",
+    "version": 1,
+    "screens": [
+        {
+            "width": 1080,
+            "height": 2400,
+            "dpi": 411.0
+        }
+    ],
+    "systemInfo": {
+        "operatingSystem": "Android"
+    }
+}
