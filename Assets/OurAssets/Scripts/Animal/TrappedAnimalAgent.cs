@@ -24,8 +24,6 @@ public class TrappedAnimalAgent : Interactable
     NavMeshAgent agent;
     bool isTrapped = true;
     Vector3 target;
-    Renderer _renderer;
-    bool isVisible;
     Collider _collider;
 
     const float MIN_FLEE_SPEED_SCALE = 0.875f;
@@ -45,13 +43,8 @@ public class TrappedAnimalAgent : Interactable
         _collider = GetComponent<Collider>();
     }
 
-    void Start() => _renderer = GetComponentInChildren<Renderer>();
-
     void Update()
     {
-        if (isVisible != _renderer.isVisible) isVisible = _renderer.isVisible;
-        if (agent.updateRotation != isVisible) agent.updateRotation = isVisible;
-        if (agent.updateUpAxis != isVisible) agent.updateUpAxis = isVisible;
         if (!isTrapped && (transform.position - target).sqrMagnitude <= targetDistance * targetDistance) Destroy(gameObject);
     }
 
